@@ -3,6 +3,7 @@ body{
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    width: auto;
 }
 
 .header{
@@ -123,6 +124,7 @@ body{
     justify-content: left;
     bottom: -4%;
     z-index: 1;
+    margin-bottom: 2%;
 }
 
 .ghost-spider img{
@@ -157,30 +159,27 @@ body{
 .miles-morales{
     display: flex;
     justify-content: right;
-    bottom: -1%;
+    margin-bottom: 6%;
+    margin-right: 15%;
     z-index: 1;
+    right: 0;
 }
 
 .telaranias-2{
     display: flex;
     justify-content: right;
-    top: 60%;
     overflow: hidden;
     z-index: 1;
+    margin-left: 7%;
+    margin-bottom: 4.6%;
 }
 
 .telaranias-2 img{
-    margin-right: -4.7%;
-    width: 25%;
+    width: 30%;
 }
 
 .miles-morales img{
     width: 31%;
-    margin-right: 12%;
-}
-
-.margen-tope img{
-    margin-top: 20%;
 }
 
 .imagen-sticky img{
@@ -211,13 +210,59 @@ body{
     position: relative;
 }
 
+h1{
+    font-size: 44px;
+    line-height: 57px;
+    margin: 0px;
+    margin-bottom: 24px;
+}
+
+p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
 .diagonal{
     z-index: 0;
     position: relative;
-    background-color: rgb(169, 103, 169);
-    height: 100px;
-    width: 1280px;
-    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
-    padding: 10rem 20%;
-    top: -100px;
+    background-color: rgb(143, 106, 166);
+    height: 700px;
+    width: 1515px;
+    transform: perspective(900px) rotateY(-20deg);
+    left: -476px;
+}
+
+.amigos .texto{
+    width: 100%;
+    position: relative;
+    top: -550px;
+    color: white;
+    padding: 0px 5%;
+    font-family: sans-serif;
+}
+
+.amigos .texto p{
+    width: 45%;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.amigos .texto h1{
+    width: 50%;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+.duende-verde{
+    display: flex;
+    justify-content: right;
+    bottom: 0;
+    z-index: 1;
+}
+
+.imagen-pelea{
+    left: 5%;
+    bottom: 4%;
 }

@@ -24,21 +24,21 @@ function myFunction() {
 
 
 let fondo = document.getElementById("img-ciudad");
-let edificios = document.getElementById("edificios");
 let tel_1 = document.querySelector(".telaranias-1");
 let peter = document.querySelector(".spider-man");
 let gwen = document.querySelector(".ghost-spider");
 let tel_2 = document.querySelector(".telaranias-2");
 let miles = document.querySelector(".miles-morales");
+let duende = document.querySelector(".duende-verde");
 window.addEventListener("scroll", function(){
     let value = window.scrollY;
 
     fondo.style.left = value + "px";
-    edificios.style.left = value * 0.5 + "px";
     tel_1.style.left = - value * 0.1 + "px";
     peter.style.left = - value * 0.1 + "px";
     gwen.style.left = - value * 0.5 + "px";
     tel_2.style.left = value * 0.1 + "px";
-    miles.style.right = - value * 0.1 + "px";
+    miles.style.right = -value * 0.1 + "px";
+    duende.style.transform = "translate(" + 0 + ", " + 0.05 * value + "px" + ")";
 
 })
