@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    max-width: 1280px;
+}
+
+header{
+    position: sticky;
+}
+
+.header-img{
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
+.header-img img{
+    width: 100%;
+}
+
+.btn-ham{
+    top: 20%;
+    position: absolute;
+}
+
+.btn-ham img{
+    width: 3.5%;
+    margin-left: 5%;
+}
+
+.btn-comprar{
+    display: flex;
+    top: 25%;
+    justify-content: right;
+    position: absolute;
+}
+
+.comprar{
+    margin-right: 10%;
+}
+
+.main{
+    top: -18px;
+    position: relative;
+}
+
+.imagen-ciudad img{
+    width: 100%;
+}
+
+.imagen-spidey{
+    display: flex;
+    justify-content: center;
+    top: 0;
+}
+
+.imagen-spidey img{
+    width: 46%;
+}
+
+.imagen-ciudad{
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
+.layers{
+    position: absolute;
+    width: 100%;
+}
+
+.layer-bottom{
+    bottom: 0;
+}
+
+.edificios-1{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.edificios-1 img{
+    width: 42.4%;
+}
+
+
+.edificios-2{
+    display: flex;
+    left: 0;
+}
+
+.edificios-2 img{
+    width: 32%;
+}
+
+.edificios-3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.edificios-3 img{
+    width: 29%;
+}
+
+.ghost-spider{
+    display: flex;
+    justify-content: left;
+    bottom: -4%;
+}
+
+.ghost-spider img{
+    width: 28%;
+    margin-left: 10%;
+}
+
+.spider-man{
+    display: flex;
+    justify-content: center;
+    bottom: -5%;
+}
+
+.telaranias-1{
+    top: 38%;
+}
+
+.telaranias-1{
+    width: 45%;
+}
+
+.spider-man img{
+    width: 36%;
+}
+
+.miles-morales{
+    display: flex;
+    justify-content: right;
+    bottom: -1%;
+}
+
+.telaranias-2{
+    display: flex;
+    justify-content: right;
+    top: 60%;
+    overflow: hidden;
+}
+
+.telaranias-2 img{
+    margin-right: -4.7%;
+    width: 25%;
+}
+
+.miles-morales img{
+    width: 31%;
+    margin-right: 12%;
+}
+
+.diagonal{
+    background-color: rgb(169, 103, 169);
+    height: 100%;
+    width: 100%;
+}
+
+.margen-tope img{
+    margin-top: 20%;
+}
+
+header.btn-ham{
+
+}
+
+
