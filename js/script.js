@@ -30,6 +30,7 @@ let gwen = document.querySelector(".ghost-spider");
 let tel_2 = document.querySelector(".telaranias-2");
 let miles = document.querySelector(".miles-morales");
 let duende = document.querySelector(".duende-verde");
+let karts = document.querySelector(".imagenes-kart");
 window.addEventListener("scroll", function(){
     let value = window.scrollY;
 
@@ -40,5 +41,21 @@ window.addEventListener("scroll", function(){
     tel_2.style.left = value * 0.1 + "px";
     miles.style.right = -value * 0.1 + "px";
     duende.style.transform = "translate(" + 0 + ", " + 0.05 * value + "px" + ")";
-
+    karts.style.transform = "translate(" + 0 + ", " + 0.05 * value + "px" + ")";
 })
+
+const sectionCards = document.querySelector(".cards-seccion");
+let sectionPeter = document.querySelector(".peter-oculto");
+let sectionGwen = document.querySelector(".gwen-oculto");
+let sectionMiles = document.querySelector(".miles-oculto");
+
+document.addEventListener("scroll", function () {
+  const clientHeight = document.documentElement.clientHeight;
+  const sectionCardsY = sectionCards.getBoundingClientRect().y;
+  const sectionCardsHeight = sectionCards.getBoundingClientRect().height;
+  if (clientHeight > sectionCardsY + (sectionCardsHeight * 2) / 3) {
+    sectionPeter.classList.add("mostrar-peter");
+    sectionGwen.classList.add("mostrar-gwen");
+    sectionMiles.classList.add("mostrar-miles");
+  }
+  });

@@ -258,11 +258,122 @@ p{
 .duende-verde{
     display: flex;
     justify-content: right;
-    bottom: 0;
+    bottom: 2%;
     z-index: 1;
 }
 
 .imagen-pelea{
     left: 5%;
-    bottom: 4%;
+    bottom: 3%;
+}
+
+.cards-seccion{
+    margin-top: 5%;
+    width: 100%;
+    min-height: 700px;
+}
+
+.peter-card, .peter-texto{
+    display: flex;
+    position: relative;
+    justify-content: left;
+    margin-left: 6%;
+}
+
+.miles-card, .miles-texto{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.gwen-card, .gwen-texto{
+    display: flex;
+    position: relative;
+    justify-content: right;
+    margin-right: 6%;
+}
+
+
+.peter-texto p, .miles-texto p, .gwen-texto p{
+    width: 28%;
+}
+
+.peter-texto p, .miles-texto p, .gwen-texto p{
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+} 
+
+.cards-texto{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 23%;
+}
+
+.peter-oculto, .miles-oculto, .gwen-oculto{
+    display: none;
+}
+
+
+.mostrar-peter{
+    display: block;
+    animation: fadeIn 1s;
+}
+
+.mostrar-miles{
+    display: block;
+    animation: fadeIn 3s;
+}
+
+.mostrar-gwen{
+    display: block;
+    animation: fadeIn 5s;
+}
+
+.amigos{
+    min-height: fit-content;
+    position: relative;
+}
+
+.ghost-seccion{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.imagenes-kart{
+    position: absolute;
+    top: -45%;
+    left: 3%;
+}
+
+.imagenes-kart img{
+    position: absolute;
+}
+
+.img-2 img{
+    margin-top: 150px;
+}
+
+.img-3 img{
+    margin-top: 390px;
+}
+
+.img-1, .img-2, .img-3, .img-1 img, .img-2 img, .img-3 img{
+    transition: 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.img-1:hover, .img-2:hover, .img-3:hover{
+    transform:translate3d(12px, 50%, 3em) scale3d(1.1, 1.1, 1.1);
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.img-1, .img-2, .img-3 {
+    width: 100%;
 }
