@@ -61,11 +61,12 @@ body{
 
 #img-ciudad{
     width: 100%;
-    background-repeat: repeat-x;
+    height: 100%;
     background-size: 100%;
     position: relative;
-    transform: translateZ(-1px) scale(1.3);
     z-index: -1;
+    background-repeat: repeat-x;
+    background-size: cover;
 }
 
 
@@ -232,7 +233,7 @@ p{
     left: -476px;
 }
 
-.amigos .texto{
+.texto{
     width: 100%;
     position: relative;
     top: -550px;
@@ -376,4 +377,76 @@ p{
 
 .img-1, .img-2, .img-3 {
     width: 100%;
+}
+
+.vengadores{
+    position: relative;
+}
+
+.negro{
+    background-color: black;
+    z-index: -1;
+    transform: perspective(1160px) rotateY(-10deg);
+    top: -39px;
+    left: -300px;
+    height: 1000px;
+}
+
+.texto-veng h1{
+    width: 52%;
+    font-size: 60px;
+    line-height: 65px;
+}
+
+.texto-veng{
+    top: -800px;
+}
+
+.parque{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 520px;
+}
+
+.arboles{
+    position: absolute;
+}
+
+.personajes{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.ms-marvel{
+    position: relative;
+    left: 250px;
+    bottom: 100px;
+}
+
+.pantera-negra{
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+}
+
+.hulk{
+    position: relative;
+    right: 170px;
+    top: 90px;
+}
+
+.ms-marvel:hover, .pantera-negra:hover, .hulk:hover{
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+}
+
+.ms-marvel, .pantera-negra, .hulk{
+    transition: 0.5s ease-out;
+}
+
+.pasto{
+    z-index: 2;
 }

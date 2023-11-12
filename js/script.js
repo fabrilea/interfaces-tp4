@@ -34,7 +34,7 @@ let karts = document.querySelector(".imagenes-kart");
 window.addEventListener("scroll", function(){
     let value = window.scrollY;
 
-    fondo.style.left = value + "px";
+    fondo.style.left = value * 0.3 + "px";
     tel_1.style.left = - value * 0.1 + "px";
     peter.style.left = - value * 0.1 + "px";
     gwen.style.left = - value * 0.5 + "px";
