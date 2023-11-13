@@ -6,6 +6,13 @@ body{
     width: auto;
 }
 
+p{
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .header{
     width: 100%;
     position: sticky;
@@ -39,13 +46,56 @@ body{
 
 .btn-comprar{
     display: flex;
-    top: 35%;
+    top: 15%;
     justify-content: right;
     position: absolute;
 }
 
+.comprar,.ahora,.correo button{
+    background: #FFE901;
+    border: 8px solid #2982FF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 19px;
+    color: #02187E;
+}
+
 .comprar{
     margin-right: 10%;
+    width: 200px;
+    height: 50px;
+    border-radius: 111px;  
+}
+
+.ahora{
+    width: 292px;
+    height: 50px;
+    border-radius: 111px;
+}
+
+.correo input{
+    width: 562px;
+    height: 82px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius:50px;
+    border: 9px, 0px, 9px, 9px;
+    background-color: white;
+    border: 8px solid #2982FF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 19px;
+    color: #02187E;
+}
+
+.correo button{
+    width: 218px;
+    height: 100px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius:50px;
 }
 
 .main{
@@ -56,8 +106,6 @@ body{
 .imagen-ciudad img{
     width: 100%;
 }
-
-
 
 #img-ciudad{
     width: 100%;
@@ -449,4 +497,204 @@ p{
 
 .pasto{
     z-index: 2;
+}
+
+.datos-juego{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.datos-juego h1{
+    margin-left: 7%;
+    font-family: sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 57px;
+}
+
+.contenido-datos{
+    display: grid;
+    justify-items: center;
+    grid-gap: 6%;
+}
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    width: 85%;
+}
+
+.contenido img{
+    height: 300px;
+    width: 550px;
+    margin: 50px 50px 50px 0px;
+}
+
+.contenido-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.contenido-texto h2{
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 38px;
+    margin-bottom: 0;
+}
+
+.contenido-texto p{
+    font-family: sans-serif;
+    font-style: bold;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.gran-poder{
+    position: relative;
+    top: 250px;
+}
+
+.gran-texto{
+    padding: 0px 100px ;
+    z-index:1;
+    position: relative;
+    top: 250px;
+    color: white;
+    width: 60%;
+}
+
+.gran-texto h1{
+    font-family: sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 72px;
+}
+
+.diagonal-baja{
+    z-index: 0;
+    height: 350px;
+    width: 1515px;
+    transform: perspective(900px) rotateY(25deg);
+    left: 100px;
+    background-color: black;
+}
+
+.spiders-bajo{
+    display: flex;
+    position: relative;
+    top: 350px;
+    justify-content: center;
+}
+
+.miles img,.gwen img{
+    height: 400px;
+}
+
+.peter img{
+    height: 450px;
+    margin: 0px -50px;
+}
+
+.footer-up{
+    height: 1296px;
+    position: relative;
+    top: 400px;
+}
+
+.gradiente{
+    height: 100%;
+    background: linear-gradient(-180deg, #8FBEFC 21.2%, #F7E3D8 81.48%);
+}
+
+.acomodador{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -1150px;
+}
+
+.up-contenido{
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bajo{
+    width: 90%;
+}
+
+.bajo p{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 79%;
+    line-height: 19px;
+}
+
+.bajo span{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.up-contenido h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 57px;
+}
+
+.footer-img{
+    width: 100%;
+}
+
+.footer-med{
+    display: flex;
+    justify-content: center;
+    width: 1280px;
+    height: 80px;
+    background-color: #242424;
+    position: relative;
+    top: 396px;
+}
+
+.footer-med img{
+    width: 1080px;
+    height: 75px;
+}
+
+.footer-down{
+    width: 1280px;
+    height: 598px;
+    background-color: #5E5E5D;
+    position: relative;
+    top: 396px;
+    color: white;
+    padding: 40px 100px;
+} 
+
+.footer-down div {
+    width: 56%;
+    font-family: sans-serif;
+}
+
+.footer-down div p{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.footer-down div a{
+    color: white;
+}
+
+.footer-down img{
+    margin-top: 40px;
 }
