@@ -311,6 +311,10 @@ p{
     z-index: 1;
 }
 
+.duende-verde img{
+    position: relative;
+}
+
 .imagen-pelea{
     left: 5%;
     bottom: 3%;
@@ -366,19 +370,9 @@ p{
 }
 
 
-.mostrar-peter{
-    display: block;
-    animation: fadeIn 1s;
-}
-
-.mostrar-miles{
+.mostrar-peter, .mostrar-miles, .mostrar-gwen{
     display: block;
     animation: fadeIn 3s;
-}
-
-.mostrar-gwen{
-    display: block;
-    animation: fadeIn 5s;
 }
 
 .amigos{
@@ -415,7 +409,7 @@ p{
     z-index: 0;
 }
 
-.img-1:hover, .img-2:hover, .img-3:hover{
+.img-1-agrandar, .img-2-agrandar, .img-3-agrandar{
     transform:translate3d(12px, 50%, 3em) scale3d(1.1, 1.1, 1.1);
     transition: 0.5s ease-in-out;
     position: absolute;
