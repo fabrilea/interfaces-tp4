@@ -982,7 +982,7 @@ p{
     left: var(--x);
     width: 40px;
     height: 63px;
-    background-image: url(../imagenes/sprites.PNG);
+    background: url(../imagenes/sprites.png);
     transform: scale(1.5);
     background-position: -178px -190px;
     animation: 
