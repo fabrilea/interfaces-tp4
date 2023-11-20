@@ -57,38 +57,6 @@ var miDiv = document.querySelector('.duende-verde');
 const posicionInicial = 20; // Ajusta según la posición inicial desde la parte superior
 let ultimaPosicionScroll = window.scrollY;
 
-// window.addEventListener('scroll', function() {
-//   // Ajusta la posición del div al hacer scroll
-//   const posicionScroll = window.scrollY ;
-
-//     // Calcula la dirección del scroll (hacia arriba o hacia abajo)
-//     const direccionScroll = posicionScroll > ultimaPosicionScroll ? 'abajo' : 'arriba';
-  
-//     // Calcula la nueva posición del div en base a la dirección del scroll
-//     let nuevaPosicion;
-//     if (direccionScroll === 'abajo') {
-//       // Si estás haciendo scroll hacia abajo, mueve el div hacia arriba
-//       nuevaPosicion = Math.max(posicionInicial - (posicionScroll - ultimaPosicionScroll), 0);
-//     } else {
-//       // Si estás haciendo scroll hacia arriba, mueve el div hacia arriba
-//       nuevaPosicion = posicionInicial - (posicionScroll - ultimaPosicionScroll);
-//       nuevaPosicion = Math.min(nuevaPosicion, posicionInicial);
-//     }
-  
-//     // Aplica la nueva posición al div
-//     miDiv.style.top = `${nuevaPosicion}px`;
-  
-//     // Actualiza la última posición de scroll
-//     ultimaPosicionScroll = posicionScroll;
-  
-//     // Establece un tiempo para que el div vuelva a su posición original después de un cierto tiempo
-//     clearTimeout(miDiv.volverTimeout);
-//     miDiv.volverTimeout = setTimeout(() => {
-//       miDiv.style.top = `${posicionInicial}px`;
-//     }, 200); // Ajusta el tiempo según tus necesidades (en milisegundos)
-  
-// });
-
 const sectionCards = document.querySelector(".cards-seccion");
 let sectionPeter = document.querySelector(".peter-oculto");
 let sectionGwen = document.querySelector(".gwen-oculto");
