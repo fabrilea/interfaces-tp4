@@ -66,47 +66,12 @@ p{
 	overflow: hidden;
 }
 
-.comprar:hover, .correo button:hover{
+.comprar:hover,.ahora:hover, .correo button:hover{
     border: 8px solid #3086ff;
     color: #2982FF;
     text-transform: uppercase;
     transition: .6s ease all;
     background-color: rgb(255, 247, 1);
-}
-
-.comprar:hover:after{
-    background-color: #8fbefc2c;
-    transform: scale(210);
-}
-
-.ahora:hover::after{
-    transform: scale(270);
-    background-color: rgba(1, 153, 255, 0.376);
-}
-
-.correo button:hover::after{
-    transform: scale(210);
-    background-color: rgba(255, 183, 1, 0.376);
-}
-
-.comprar span ,.ahora span ,.correo button span{
-    position: relative;
-    z-index: 2;
-    transition: .6s ease all;
-}
-
-.comprar::after,.ahora::after,.correo button::after{
-    content: "";
-	width: 1px;
-	height: 1px;
-	background: none;
-	position: absolute;
-	z-index: 1;
-	top: 50%;
-	left: 50%;
-	transition: .6s ease-in-out all;
-	border-radius: 100px;
-	transform-origin: center;
 }
 
 .comprar{
@@ -118,7 +83,14 @@ p{
 
 .hambur{
     margin-left: 30px;
+    width: 50px;
     cursor: pointer;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .menu{
@@ -157,7 +129,7 @@ p{
     transition: .7s ease-in-out ;
 }
 .cont3{
-	transition: .9s ease-in-out;
+	transition: 1s ease-in-out;
 }
 
 .menu-usuario .cont1 span,.menu-usuario .cont2 span ,.menu-usuario .cont3 span   {
@@ -921,6 +893,12 @@ p{
     background-color: rgba(255, 0, 0, 0.416);
 } */
 
+:root{
+    --posMax:907.188px;
+    --posMin:622.078px;
+    --x:150px;
+}
+
 .sprite{
     display: flex;
     justify-content: center;
@@ -931,10 +909,9 @@ p{
     position: relative;
     bottom: 60%;
     left: -50px;
-
     width: 40px;
     height: 63px;
-    background: url(../imagenes/sprites.png) repeat-x;
+    background: url(../imagenes/sprites.png);
     transform: scale(1.5);
     background-position: -22px -56px;
     animation:
@@ -993,6 +970,100 @@ p{
     }
 }
 
+.caida{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 5 ;
+    position: relative;
+    bottom: var(--posMax);
+    left: var(--x);
+    width: 40px;
+    height: 63px;
+    background-image: url(../imagenes/sprites.PNG);
+    transform: scale(1.5);
+    background-position: -178px -190px;
+    animation: 
+        golpe .5s steps(3) 1,
+        caer 2s .4s ;
+}
+
+.p{
+    z-index: 5;
+    background-color: #c92b948c;
+    position: relative;
+    bottom: 60%;
+    left: 150px;
+    width: 40px;
+    height: 63px;
+}
+
+@keyframes golpe {
+    from{
+        background-position: -178px -190px;
+    }
+    25%{
+        transform: rotate(-22deg) scale(1.5);
+    }
+    50%{
+        transform: rotate(-45deg) scale(1.5);
+    }
+    75%{
+        transform: rotate(-67deg) scale(1.5);
+    }
+    85%{
+        transform: rotate(-85deg) scale(1.5);
+    }
+    to{
+        background-position: -320px -190px;
+        transform: rotate(-100deg) scale(1.5);
+    }
+}
+
+@keyframes caer {
+    from{
+        background-position: -320px -190px;
+        transform: rotate(-110deg) scale(1.5);
+        bottom: var(--posMax);
+        left: var(--x);
+        opacity: 0.9;
+    }
+    12%{
+        background-position: -320px -190px;
+        transform: rotate(-130deg) scale(1.5);
+        left: calc(var(--x) - (var(--x)*0.02));
+        opacity: 0.5;
+    }
+    25%{
+        background-position: -320px -190px;
+        transform: rotate(-160deg) scale(1.5); 
+        opacity: 0.2;
+    }
+    30%{
+        background-position: -320px -190px;
+        transform: rotate(-160deg) scale(1.5); 
+        opacity: 0;
+    }
+    50%{
+        background-position: -320px -190px;
+        transform: rotate(-180deg) scale(1.5);
+        bottom: 50%;
+        opacity: 0;
+    }
+    51%{
+        opacity: 0;
+    }
+    to{
+        background-position: -320px -190px;
+        transform: rotate(-180deg) scale(1.5);
+        opacity: 0;
+        bottom: var(--posMin);
+        left: var(--x);
+    }
+}
+
 .contenido img{
     position: inherit;
 }
@@ -1000,22 +1071,36 @@ p{
 /* loading ---------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .carga{
-    background-color: red;
+    background-color: rgb(221 49 49);
 }
 
 .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.mascara{
+    width: 150px;
+    margin: 30px;
+    animation: rotar 2s infinite;
+}
+
+@keyframes rotar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
+
 .percent {
-    color: #ffffffdd;
-    font-size: 100px;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 15px;
+    display: none;
 }
 
 .progress-bar {
@@ -1030,12 +1115,11 @@ p{
 .progress {
     width: 10px;
     height: 15px;
-    background: #C50766;
+    background: #2041eb;
     border-radius: 13px;
 }
 
 .text {
-    position: relative;
     left: 160px;
     color: #fdb5ca;
     font-size: 15px;

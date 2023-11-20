@@ -18,7 +18,7 @@ window.onload = function(){
         percent.textContent = count + '%';
       }
     }
-    setTimeout(callBack_func, 5000);
+    setTimeout(callBack_func, 5200);
     function callBack_func() {
         document.location.href = "paginaHome.html";
     }
