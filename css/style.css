@@ -14,8 +14,24 @@ p{
 }
 
 .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    height:100px;
+    background-color: #5499F8;
     position: sticky;
+    padding: 0px 1%;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    padding-left: 200px;
+}
+
+.logo img{
+    width: 21%;
 }
 
 .sticky{
@@ -33,24 +49,6 @@ p{
     width: 100%;
 }
 
-.btn-ham{
-    top: 27%;
-    position: absolute;
-    cursor: pointer;
-}
-
-.btn-ham img{
-    width: 3.5%;
-    margin-left: 5%;
-}
-
-.btn-comprar{
-    display: flex;
-    top: 15%;
-    justify-content: right;
-    position: absolute;
-}
-
 .comprar,.ahora,.correo button{
     background: #FFE901;
     border: 8px solid #2982FF;
@@ -60,13 +58,148 @@ p{
     font-weight: 900;
     line-height: 19px;
     color: #02187E;
+    cursor: pointer;
+	text-transform: uppercase;
+	transition: .6s ease all;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+.comprar:hover, .correo button:hover{
+    border: 8px solid #3086ff;
+    color: #2982FF;
+    text-transform: uppercase;
+    transition: .6s ease all;
+    background-color: rgb(255, 247, 1);
+}
+
+.comprar:hover:after{
+    background-color: #8fbefc2c;
+    transform: scale(210);
+}
+
+.ahora:hover::after{
+    transform: scale(270);
+    background-color: rgba(1, 153, 255, 0.376);
+}
+
+.correo button:hover::after{
+    transform: scale(210);
+    background-color: rgba(255, 183, 1, 0.376);
+}
+
+.comprar span ,.ahora span ,.correo button span{
+    position: relative;
+    z-index: 2;
+    transition: .6s ease all;
+}
+
+.comprar::after,.ahora::after,.correo button::after{
+    content: "";
+	width: 1px;
+	height: 1px;
+	background: none;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transition: .6s ease-in-out all;
+	border-radius: 100px;
+	transform-origin: center;
 }
 
 .comprar{
-    margin-right: 10%;
     width: 200px;
     height: 50px;
     border-radius: 111px;  
+    margin-right: 50px;
+}
+
+.hambur{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.menu-usuario{
+    /* background-color: #660561; */
+    height: 274px;
+    width: 75%;
+    position: relative;
+    display: block;
+    z-index: 3;
+    transition: all .5s ease-in-out;
+    left: 0;
+}
+
+.cont1,.cont2,.cont3 {
+    width: 100%;
+    background-color: #FFE901;
+	position: relative;
+	overflow: hidden;
+    cursor: pointer;
+    box-shadow: 4px 5px 0px 0px #02187e;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 19px;
+}
+
+.cont1{
+    transition: .5s ease-in-out;
+}
+.cont2{
+    transition: .7s ease-in-out ;
+}
+.cont3{
+	transition: .9s ease-in-out;
+}
+
+.menu-usuario .cont1 span,.menu-usuario .cont2 span ,.menu-usuario .cont3 span   {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 60px;
+    padding: 7% 5%;
+    color: #02187E;
+    border: 5px solid rgb(23, 103, 215);
+	position: relative;
+	z-index: 2;
+	transition: .3s ease all;
+}
+
+.cont1::after,.cont2::after.cont3::after {
+	content: "";
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(-100% - 100px);
+	border-bottom: 100px solid #970891;
+	border-right: 100px solid transparent;
+	transition: .4s ease-in-out all;
+}
+
+.cont1:hover::after,.cont2:hover::after,.cont3:hover::after {
+	left: 0;
+}
+
+.cont1 h2,.cont2 h2,.cont3 h2{
+    width: auto;
+    padding: 0px 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.menu-oculto{
+    width: 0%;
+    transition: all .5s ease-in-out;
 }
 
 .ahora{
@@ -307,12 +440,14 @@ p{
 .duende-verde{
     display: flex;
     justify-content: right;
-    bottom: 2%;
+    top: 20px;
     z-index: 1;
+    transition: all 3s ease-in-out ;
 }
 
 .duende-verde img{
     position: relative;
+    transition: all .3s ease-in-out ;
 }
 
 .imagen-pelea{
@@ -390,6 +525,7 @@ p{
     position: absolute;
     top: -45%;
     left: 3%;
+    transition: all 3s ease-in-out ;
 }
 
 .imagenes-kart img{
@@ -494,9 +630,7 @@ p{
 }
 
 .datos-juego{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
 }
 
 .datos-juego h1{
@@ -508,28 +642,47 @@ p{
 }
 
 .contenido-datos{
+    position: relative;
     display: grid;
     justify-items: center;
     grid-gap: 6%;
+    min-height: 1900px;
+}
+
+.contenido-datos img{
+    position: sticky;
+    top: 25%;
+    bottom: -5%;
 }
 
 .contenido{
     display: flex;
-    justify-content: center;
+    position: sticky;
+    justify-content: start;
     width: 85%;
 }
 
 .contenido img{
+    position: sticky;
     height: 300px;
     width: 550px;
     margin: 50px 50px 50px 0px;
 }
 
 .contenido-texto{
+    top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%;
+    width: 45%;
+}
+
+.contenidos-textos{
+    margin-top: 10%;
+    position: absolute;
+    grid-gap: 240px;
+    display: grid;
+    flex-direction: column;
+    justify-items: right;
 }
 
 .contenido-texto h2{
@@ -538,6 +691,7 @@ p{
     font-weight: 400;
     line-height: 38px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .contenido-texto p{
@@ -579,19 +733,77 @@ p{
 }
 
 .spiders-bajo{
+    padding-top: 10%;
     display: flex;
     position: relative;
-    top: 350px;
+    top: 260px;
     justify-content: center;
+    z-index: 0;
 }
 
 .miles img,.gwen img{
     height: 400px;
+    transition: all .5s ease-in-out ;
 }
 
 .peter img{
     height: 450px;
     margin: 0px -50px;
+    transition: all .5s ease-in-out ;
+}
+
+.gwen img:hover{
+    transform: scale(1.25);
+    transition: all .5s ease-in-out ;
+}
+
+.diagonal-oscura{
+    padding-top: 10%;
+    width: 2000px;
+    height: 500px;
+    left: -400px;
+    top: 260px;
+    background-color: rgb(204,204,204);
+    border-top: #304C71 solid 10px;
+    border-bottom: #304C71 solid 10px;
+    transform: perspective(600px) rotateY(350deg);
+    z-index: 1;
+}
+
+.diagonal-azul{
+    padding-top: 10%;
+    width: 2000px;
+    height: 500px;
+    left: -400px;
+    top: 260px;
+    background-color: rgb(211, 221, 244);
+    border-top: #2553c8 solid 10px;
+    border-bottom: #2553c8 solid 10px;
+    transform: perspective(600px) rotateY(350deg);
+    z-index: 1;
+}
+
+.diagonal-rosa{
+    padding-top: 10%;
+    width: 2000px;
+    height: 500px;
+    left: -400px;
+    top: 260px;
+    background-color: rgb(255, 204,237);
+    border-top: #C92B94 solid 10px;
+    border-bottom: #C92B94  solid 10px;
+    transform: perspective(600px) rotateY(350deg);
+    z-index: 1;
+}
+
+.miles img:hover{
+    transform: scale(1.25);
+    transition: all .5s ease-in-out ;
+}
+
+.peter img:hover{
+    transform: scale(1.25);
+    transition: all .5s ease-in-out ;
 }
 
 .footer-up{
@@ -691,4 +903,96 @@ p{
 
 .footer-down img{
     margin-top: 40px;
+}
+
+.oculto{
+    display: none;
+}
+
+/* .medio{
+    height: 100%;
+    width: 5px;
+    background-color: rgba(255, 0, 0, 0.416);
+}
+
+.medio2{
+    height: 5px;
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.416);
+} */
+
+.sprite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 5 ;
+    position: relative;
+    bottom: 60%;
+    left: -50px;
+
+    width: 40px;
+    height: 63px;
+    background: url(../imagenes/sprites.PNG);
+    transform: scale(1.5);
+    background-position: -22px -56px;
+    animation:
+        vuelta .8s steps(5),
+        columpiar 1.6s steps(4) .8s;
+}
+
+@keyframes columpiar {
+    from{
+        left: 100px;
+        bottom: 60%;
+        background-position: -337px -56px;
+        transform:rotate(10deg);
+    }
+    25%{
+        left: 250px;
+        transform: scale(1.5) rotate(20deg);
+        bottom: 55%;
+    }
+    35%{
+        left: 400px;
+        bottom: 55%;
+        transform:scale(1.5) rotate(10deg);
+    }
+    50%{
+        transform:scale(1.5) rotate(-20deg);
+        left: 650px;
+        bottom: 65%;
+    }
+    75%{
+        left: 900px;
+        bottom: 70%;
+    }
+
+    87%{
+        left: 1100px;
+        bottom: 68%;
+    }
+    to{
+        left: 1280px;
+        bottom: 62%;
+        background-position: -523px -56px;
+    }
+}
+
+@keyframes vuelta{
+    from{
+        left: -50px;
+        bottom: 70%;
+        background-position: -22px -56px;
+    }
+    to{
+        left: 100px;
+        bottom: 60%;
+        background-position: -228px -56px;
+    }
+}
+
+.contenido img{
+    position: inherit;
 }

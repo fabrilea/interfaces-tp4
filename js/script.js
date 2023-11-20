@@ -3,7 +3,7 @@ window.onscroll = function() {myFunction()};
 
 // Get the header
 var header = document.querySelector(".header");
-var header_img = document.querySelector(".header-img");
+var header_img = document.querySelector("#logoHead");
 var logo = document.querySelector(".imagen-spidey");
 
 // Get the offset position of the navbar
@@ -13,15 +13,23 @@ var sticky = header.offsetTop;
 function myFunction() {
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
-    header_img.classList.add("achicarse");
-    logo.classList.add("imagen-sticky");
+    header_img.classList.remove("oculto");
+    logo.classList.add("oculto");
   } else {
     header.classList.remove("sticky");
-    header_img.classList.remove("achicarse");
-    logo.classList.remove("imagen-sticky");
+    header_img.classList.add("oculto");
+    logo.classList.remove("oculto");
   }
 }
 
+let cambiarMenuElement = document.querySelector(".btn-ham");
+let hamMenuElement = document.querySelector("#menu-ham");
+
+cambiarMenuElement.addEventListener("click", () => {
+  for (let i = 0; i < hamMenuElement.children.length; i++) {
+    hamMenuElement.children[i].classList.toggle("menu-oculto");
+  }
+});
 
 let fondo = document.getElementById("img-ciudad");
 let tel_1 = document.querySelector(".telaranias-1");
@@ -40,27 +48,46 @@ window.addEventListener("scroll", function(){
     gwen.style.left = - value * 0.5 + "px";
     tel_2.style.left = value * 0.1 + "px";
     miles.style.right = -value * 0.1 + "px";
-    // duende.scrollTop = duende.scrollTop/2;
-    karts.style.transform = "translate(" + 0 + ", " + 0.05 * value + "px" + ")";
+    duende.style.transform = "translate(" + 0 + ", " + 0.07 * value + "px" + ")";
+    karts.style.transform = "translate(" + 0 + ", " + 0.07 * value + "px" + ")";
 })
 
 var miDiv = document.querySelector('.duende-verde');
 
-window.addEventListener('scroll', function() {
-    // Si deseas realizar la acción después de un cierto tiempo, puedes usar setTimeout
-    setTimeout(function() {
-        // Obtén el desplazamiento vertical
-        var scrollY = window.scrollY;
+const posicionInicial = 20; // Ajusta según la posición inicial desde la parte superior
+let ultimaPosicionScroll = window.scrollY;
 
-        // Calcula la nueva posición del div 
-        var nuevaPosicion = scrollY * 0.089 + 'px';
+// window.addEventListener('scroll', function() {
+//   // Ajusta la posición del div al hacer scroll
+//   const posicionScroll = window.scrollY ;
 
-        // Aplica la nueva posición al div
-        miDiv.style.transform = "translate(" + 0 + ", " + nuevaPosicion + ")";
-        miDiv.style.transition = "smooth";
-    }, 5000); // 500 milisegundos de retardo
-});
-
+//     // Calcula la dirección del scroll (hacia arriba o hacia abajo)
+//     const direccionScroll = posicionScroll > ultimaPosicionScroll ? 'abajo' : 'arriba';
+  
+//     // Calcula la nueva posición del div en base a la dirección del scroll
+//     let nuevaPosicion;
+//     if (direccionScroll === 'abajo') {
+//       // Si estás haciendo scroll hacia abajo, mueve el div hacia arriba
+//       nuevaPosicion = Math.max(posicionInicial - (posicionScroll - ultimaPosicionScroll), 0);
+//     } else {
+//       // Si estás haciendo scroll hacia arriba, mueve el div hacia arriba
+//       nuevaPosicion = posicionInicial - (posicionScroll - ultimaPosicionScroll);
+//       nuevaPosicion = Math.min(nuevaPosicion, posicionInicial);
+//     }
+  
+//     // Aplica la nueva posición al div
+//     miDiv.style.top = `${nuevaPosicion}px`;
+  
+//     // Actualiza la última posición de scroll
+//     ultimaPosicionScroll = posicionScroll;
+  
+//     // Establece un tiempo para que el div vuelva a su posición original después de un cierto tiempo
+//     clearTimeout(miDiv.volverTimeout);
+//     miDiv.volverTimeout = setTimeout(() => {
+//       miDiv.style.top = `${posicionInicial}px`;
+//     }, 200); // Ajusta el tiempo según tus necesidades (en milisegundos)
+  
+// });
 
 const sectionCards = document.querySelector(".cards-seccion");
 let sectionPeter = document.querySelector(".peter-oculto");
@@ -72,12 +99,9 @@ document.addEventListener("scroll", function () {
   const sectionCardsY = sectionCards.getBoundingClientRect().y;
   const sectionCardsHeight = sectionCards.getBoundingClientRect().height;
   if (clientHeight > sectionCardsY + (sectionCardsHeight * 2) / 3) {
-    setTimeout(aniadirPeter,
-                100);
-    setTimeout(aniadirGwen,
-                1000);
-    setTimeout(aniadirMiles,
-                1900);
+    setTimeout(aniadirPeter,100);
+    setTimeout(aniadirGwen, 250);
+    setTimeout(aniadirMiles,400);
 }});
 
 function aniadirPeter(){
@@ -127,3 +151,73 @@ img_3.addEventListener("mouseleave", () => {
   img_3.classList.remove("img-1-agrandar");
   console.log("chau")
 });
+
+let fondoHover = document.querySelector(".spiders-bajo");
+let gwenHover = document.querySelector(".gwen")
+let peterHover = document.querySelector(".peter")
+let milesHover = document.querySelector(".miles")
+let foot = document.querySelector(".footer-up");
+
+gwenHover.addEventListener("mouseover", () => {
+  fondoHover.classList.add("diagonal-rosa");
+  document.getElementById("peter-img").src="imagenes/image 231.png";
+  document.getElementById("miles-img").src="imagenes/image 230.png";
+  foot.style.top = "200px";
+  console.log("hola")
+});
+gwenHover.addEventListener("mouseleave", () => {
+  fondoHover.classList.remove("diagonal-rosa");
+  document.getElementById("peter-img").src="imagenes/image 234.png";
+  document.getElementById("miles-img").src="imagenes/image 236.png";
+  foot.style.top = "400px";
+  console.log("chau")
+});
+
+peterHover.addEventListener("mouseover", () => {
+  fondoHover.classList.add("diagonal-azul");
+  document.getElementById("gwen-img").src="imagenes/image 232.png";
+  document.getElementById("miles-img").src="imagenes/image 230.png";
+  foot.style.top = "200px";
+  console.log("hola")
+});
+peterHover.addEventListener("mouseleave", () => {
+  fondoHover.classList.remove("diagonal-azul");
+  document.getElementById("gwen-img").src="imagenes/image 229.png";
+  document.getElementById("miles-img").src="imagenes/image 236.png";
+  foot.style.top = "400px";
+  console.log("chau")
+});
+
+milesHover.addEventListener("mouseover", () => {
+  fondoHover.classList.add("diagonal-oscura");
+  document.getElementById("gwen-img").src="imagenes/image 232.png";
+  document.getElementById("peter-img").src="imagenes/image 231.png";
+  foot.style.top = "200px";
+  console.log("hola")
+});
+milesHover.addEventListener("mouseleave", () => {
+  fondoHover.classList.remove("diagonal-oscura");
+  document.getElementById("gwen-img").src="imagenes/image 229.png";
+  document.getElementById("peter-img").src="imagenes/image 234.png";
+  foot.style.top = "400px";
+  console.log("chau")
+});
+
+let animacion = document.querySelector(".nada");
+
+function mostrarAnimacion(){
+  animacion.classList.toggle("sprite");
+}
+
+function cargarAnimacion() {
+  mostrarAnimacion();
+
+  // Genera un tiempo aleatorio entre 1 y 5 segundos (en milisegundos)
+  const tiempoAleatorio = Math.floor(Math.random() * (5000 - 1000 + 1)) + 3000;
+
+  // Llama a cargarAnimacion nuevamente después de un tiempo aleatorio
+  setTimeout(cargarAnimacion, tiempoAleatorio);
+}
+
+// Llama a cargarAnimacion por primera vez después de un tiempo aleatorio
+setTimeout(cargarAnimacion, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000);
