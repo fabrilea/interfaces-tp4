@@ -934,7 +934,7 @@ p{
 
     width: 40px;
     height: 63px;
-    background: url(imagenes/sprites.png);
+    background: url(../imagenes/sprites.png);
     transform: scale(1.5);
     background-position: -22px -56px;
     animation:
