@@ -650,7 +650,6 @@ p{
 }
 
 .contenido-datos img{
-    position: sticky;
     top: 25%;
     bottom: -5%;
 }
@@ -660,6 +659,7 @@ p{
     position: sticky;
     justify-content: start;
     width: 85%;
+    position: sticky;
 }
 
 .contenido img{
@@ -1060,4 +1060,18 @@ p{
     100% {
         opacity: 1;
     }
+}
+
+/* ----------------------------------------------------- */
+
+.contenido-0, .contenido-1, .contenido-2, .contenido-3{
+    visibility: hidden;
+    position: absolute;
+}
+
+.mostrar-imagen{
+    position: sticky;
+    visibility: visible;
+    animation: fadeIn 1s;
+    transition: .3s ease-in;
 }
