@@ -76,10 +76,10 @@ document.addEventListener("scroll", function () {
   const clientHeight = document.documentElement.clientHeight;
   const sectionCardsY = sectionCards.getBoundingClientRect().y;
   const sectionCardsHeight = sectionCards.getBoundingClientRect().height;
-  if (clientHeight > sectionCardsY + (sectionCardsHeight * 2) / 3) {
+  if (clientHeight > sectionCardsY + (sectionCardsHeight * 2) / 15) {
     setTimeout(aniadirPeter,100);
-    setTimeout(aniadirGwen, 250);
-    setTimeout(aniadirMiles,400);
+    setTimeout(aniadirGwen, 500);
+    setTimeout(aniadirMiles,900);
 }});
 
 function aniadirPeter(){
@@ -101,33 +101,33 @@ let img_3 = document.querySelector(".img-3");
 
 img_1.addEventListener("mouseover", () => {
   img_1.classList.add("img-1-agrandar");
-  console.log("hola")
+  img_2.classList.add("img-correr");
+  img_3.classList.add("img-correr");
 });
 img_1.addEventListener("mouseleave", () => {
   img_1.classList.remove("img-1-agrandar");
-  console.log("chau")
+  img_2.classList.remove("img-correr");
+  img_3.classList.remove("img-correr");
 });
 
 
 
 img_2.addEventListener("mouseover", () => {
   img_2.classList.add("img-2-agrandar");
-  console.log("hola")
+  img_3.classList.add("img-correr");
 });
 img_2.addEventListener("mouseleave", () => {
   img_2.classList.remove("img-2-agrandar");
-  console.log("chau")
+  img_3.classList.remove("img-correr");
 });
 
 
 
 img_3.addEventListener("mouseover", () => {
-  img_3.classList.add("img-1-agrandar");
-  console.log("hola")
+  img_3.classList.add("img-3-agrandar");
 });
 img_3.addEventListener("mouseleave", () => {
-  img_3.classList.remove("img-1-agrandar");
-  console.log("chau")
+  img_3.classList.remove("img-3-agrandar");
 });
 
 let fondoHover = document.querySelector(".spiders-bajo");
@@ -208,15 +208,22 @@ function quitarCaida(){
 
 function cargarAnimacion() {
   mostrarAnimacion();
-
-  // Genera un tiempo aleatorio entre 3 y 11 segundos (en milisegundos)
-  const tiempoAleatorio = Math.floor(Math.random() * (8000 - 1000 + 1)) + 3000;
   // Llama a cargarAnimacion nuevamente después de un tiempo aleatorio
-  setTimeout(cargarAnimacion, tiempoAleatorio);
+  setTimeout(cargarAnimacion, 2400);
 }
 
 // Llama a cargarAnimacion por primera vez después de un tiempo aleatorio
-setTimeout(cargarAnimacion, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000);
+// setTimeout(cargarAnimacion, Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000);
+let footer = document.querySelector(".nada");
+let ejecutado = false;
+document.addEventListener("scroll", function () {
+  const clientHeight = document.documentElement.clientHeight;
+  const footerY = sectionCards.getBoundingClientRect().y;
+  const footerHeight = sectionCards.getBoundingClientRect().height;
+  if (!ejecutado && clientHeight > footerY + (footerHeight * 2) / 3) {
+    ejecutado = true;
+    cargarAnimacion();
+}});
 
 
 
@@ -236,7 +243,6 @@ window.addEventListener("scroll", () => {
   if(value >= -200 && value <= 300){
       game_1.classList.add("mostrar-imagen");
       game_2.classList.remove("mostrar-imagen");
-      console.log("hola")
   } else if(value >= -900 && value <= -201){
       game_1.classList.remove("mostrar-imagen")
       game_2.classList.add("mostrar-imagen")
