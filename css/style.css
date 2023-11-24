@@ -1167,6 +1167,25 @@ p{
     }
 }
 
+.cambio{
+    animation: cambio 1s;
+}
+
+@keyframes cambio {
+    from{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(0.5);
+    }
+    95%{
+        transform: scale(1.05);
+    } 
+    to{
+        transform: scale(1);
+    }
+}
+
 /* ----------------------------------------------------- */
 
 .contenido-0, .contenido-1, .contenido-2, .contenido-3{

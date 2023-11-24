@@ -31,14 +31,21 @@ cambiarMenuElement.addEventListener("click", () => {
     hamMenuElement.children[i].classList.toggle("menu-oculto");
   }
   if(hamMenuElement.children[0].classList.contains("menu-oculto")){
+    cambio();
     imgHam.src="imagenes/Group 1.png";
     imgHam.style.width = "50px";
   } else{
+    cambio();
     imgHam.src="imagenes/cruz.png";
     imgHam.style.width = "60px";
+    
   }
-  
+  setTimeout(cambio, 1010);
 });
+
+function cambio(){
+  imgHam.classList.toggle("cambio");
+}
 
 let fondo = document.getElementById("img-ciudad");
 let tel_1 = document.querySelector(".telaranias-1");
@@ -235,9 +242,7 @@ let game_4 = document.querySelector(".contenido-3");
 
 window.addEventListener("scroll", () => {
   let seccion = document.querySelector(".datos-juego");
-  const clientHeight = document.documentElement.clientHeight;
   const seccionY = seccion.getBoundingClientRect().y;
-  const seccionHeight = seccion.getBoundingClientRect().height;
   let value = seccionY
   console.log(value)
   if(value >= -200 && value <= 300){
