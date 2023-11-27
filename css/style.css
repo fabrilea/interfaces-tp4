@@ -902,18 +902,6 @@ p{
     display: none;
 }
 
-/* .medio{
-    height: 100%;
-    width: 5px;
-    background-color: rgba(255, 0, 0, 0.416);
-}
-
-.medio2{
-    height: 5px;
-    width: 100%;
-    background-color: rgba(255, 0, 0, 0.416);
-} */
-
 :root{
     --posMax:907.188px;
     --posMin:622.078px;

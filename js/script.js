@@ -1,15 +1,15 @@
-// When the user scrolls the page, execute myFunction
+// Cyando el usuario scrollea, se activa la función
 window.onscroll = function() {myFunction()};
 
-// Get the header
+// Obtengo los contenidos del header
 var header = document.querySelector(".header");
 var header_img = document.querySelector("#logoHead");
 var logo = document.querySelector(".imagen-spidey");
 
-// Get the offset position of the navbar
+// Obtiene la posición offset del header
 var sticky = header.offsetTop;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+// Añade la el atributo sticky del header cuando se aleja de él, y lo desactiva cuando vuelve
 function myFunction() {
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
@@ -22,10 +22,14 @@ function myFunction() {
   }
 }
 
+
+// Obtengo los contenidos del menú
 let cambiarMenuElement = document.querySelector(".btn-ham");
 let hamMenuElement = document.querySelector("#menu-ham");
 let imgHam = document.querySelector(".hambur")
 
+
+//Los voy agregando uno por uno cuando el usuario hace click sobre el logo del menú
 cambiarMenuElement.addEventListener("click", () => {
   for (let i = 0; i < hamMenuElement.children.length; i++) {
     hamMenuElement.children[i].classList.toggle("menu-oculto");
@@ -35,11 +39,13 @@ cambiarMenuElement.addEventListener("click", () => {
     imgHam.src="imagenes/Group 1.png";
     imgHam.style.width = "50px";
   } else{
+    //Se cambia el logo del menú a una cruz cuando está abierto con la animación cambio
     cambio();
     imgHam.src="imagenes/cruz.png";
     imgHam.style.width = "60px";
     
   }
+  //Se van agregando de a poco
   setTimeout(cambio, 1010);
 });
 
@@ -47,6 +53,8 @@ function cambio(){
   imgHam.classList.toggle("cambio");
 }
 
+
+//Se obtienen varios elementos de la página para proceder con animaciones parallax
 let fondo = document.getElementById("img-ciudad");
 let tel_1 = document.querySelector(".telaranias-1");
 let peter = document.querySelector(".spider-man");
@@ -56,6 +64,9 @@ let miles = document.querySelector(".miles-morales");
 let duende = document.querySelector(".duende-verde");
 let karts = document.querySelector(".imagenes-kart");
 
+
+//Le decimos que cuando el usuario scrolleé se cambien
+//las posiciones de diferentes direcciones para generar un efecto de movimiento
 window.addEventListener("scroll", function(){  
     let value = window.scrollY;
 
@@ -69,20 +80,19 @@ window.addEventListener("scroll", function(){
     karts.style.transform = "translate(" + 0 + ", " + 0.07 * value + "px" + ")";
 })
 
-var miDiv = document.querySelector('.duende-verde');
-
-const posicionInicial = 20; // Ajusta según la posición inicial desde la parte superior
-let ultimaPosicionScroll = window.scrollY;
-
+//Obtengo los contenidos de las cards
 const sectionCards = document.querySelector(".cards-seccion");
 let sectionPeter = document.querySelector(".peter-oculto");
 let sectionGwen = document.querySelector(".gwen-oculto");
 let sectionMiles = document.querySelector(".miles-oculto");
 
+//Digo que cuando el usuario scrolleé, y que la posición del usuario 
+//se vaya acercando al alto y posición e Y de la cards, aparezcan
 document.addEventListener("scroll", function () {
   const clientHeight = document.documentElement.clientHeight;
   const sectionCardsY = sectionCards.getBoundingClientRect().y;
   const sectionCardsHeight = sectionCards.getBoundingClientRect().height;
+  //Se añaden a poco
   if (clientHeight > sectionCardsY + (sectionCardsHeight * 2) / 15) {
     setTimeout(aniadirPeter,100);
     setTimeout(aniadirGwen, 500);
@@ -101,6 +111,9 @@ function aniadirMiles(){
   sectionMiles.classList.add("mostrar-miles")
 }
 
+
+//Cuando se hace hover, se van activando las animaciones de las imagenes del juego
+//cuando se alejan, vuelven a la forma inicial
 let img_1 = document.querySelector(".img-1");
 let img_2 = document.querySelector(".img-2");
 let img_3 = document.querySelector(".img-3");
@@ -137,6 +150,10 @@ img_3.addEventListener("mouseleave", () => {
   img_3.classList.remove("img-3-agrandar");
 });
 
+
+//Cuando se hace hover, se cambian los fondos de los spider-man 
+//y se agranda el personaje específico, y se le añade una diagonal 
+//particular dependiendo del personaje
 let fondoHover = document.querySelector(".spiders-bajo");
 let gwenHover = document.querySelector(".gwen")
 let peterHover = document.querySelector(".peter")
@@ -148,14 +165,12 @@ gwenHover.addEventListener("mouseover", () => {
   document.getElementById("peter-img").src="imagenes/image 231.png";
   document.getElementById("miles-img").src="imagenes/image 230.png";
   foot.style.top = "185px";
-  console.log("hola")
 });
 gwenHover.addEventListener("mouseleave", () => {
   fondoHover.classList.remove("diagonal-rosa");
   document.getElementById("peter-img").src="imagenes/image 234.png";
   document.getElementById("miles-img").src="imagenes/image 236.png";
   foot.style.top = "400px";
-  console.log("chau")
 });
 
 peterHover.addEventListener("mouseover", () => {
@@ -163,14 +178,12 @@ peterHover.addEventListener("mouseover", () => {
   document.getElementById("gwen-img").src="imagenes/image 232.png";
   document.getElementById("miles-img").src="imagenes/image 230.png";
   foot.style.top = "185px";
-  console.log("hola")
 });
 peterHover.addEventListener("mouseleave", () => {
   fondoHover.classList.remove("diagonal-azul");
   document.getElementById("gwen-img").src="imagenes/image 229.png";
   document.getElementById("miles-img").src="imagenes/image 236.png";
   foot.style.top = "400px";
-  console.log("chau")
 });
 
 milesHover.addEventListener("mouseover", () => {
@@ -178,25 +191,26 @@ milesHover.addEventListener("mouseover", () => {
   document.getElementById("gwen-img").src="imagenes/image 232.png";
   document.getElementById("peter-img").src="imagenes/image 231.png";
   foot.style.top = "185px";
-  console.log("hola")
 });
 milesHover.addEventListener("mouseleave", () => {
   fondoHover.classList.remove("diagonal-oscura");
   document.getElementById("gwen-img").src="imagenes/image 229.png";
   document.getElementById("peter-img").src="imagenes/image 234.png";
   foot.style.top = "400px";
-  console.log("chau")
 });
 
-//window.getComputedStyle(animacion).getPropertyValue('bottom');
 
-
+//Selecciona la parte footer con la clase nada
 let animacion = document.querySelector(".nada");
 
+
+//Muestra el sprite moviendose
 function mostrarAnimacion(){
   animacion.classList.toggle("sprite");
 }
 
+//Cuando se hace hover sobre el sprite se activa la clase caída, 
+//que hace que la animación pare y transicione a la caída del sprite
 animacion.addEventListener("mouseover", ()=> {
 
   let y = window.getComputedStyle(animacion).getPropertyValue('bottom');
@@ -234,17 +248,18 @@ document.addEventListener("scroll", function () {
 
 
 
-
+//Obtengo los contenidos de las imagenes del juego de doc ock
 let game_1 = document.querySelector(".contenido-0");
 let game_2 = document.querySelector(".contenido-1");
 let game_3 = document.querySelector(".contenido-2");
 let game_4 = document.querySelector(".contenido-3");
 
+//Mientras voy scrolleando, va chequeando la posición 
+//y va cambiando dependiendo de la posición en Y del div datos-juego
 window.addEventListener("scroll", () => {
   let seccion = document.querySelector(".datos-juego");
   const seccionY = seccion.getBoundingClientRect().y;
   let value = seccionY
-  console.log(value)
   if(value >= -200 && value <= 300){
       game_1.classList.add("mostrar-imagen");
       game_2.classList.remove("mostrar-imagen");

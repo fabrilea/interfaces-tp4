@@ -1,4 +1,7 @@
 "use strict"
+//Cuando se carga la página, obtiene los contenidos del index loading,
+//va ejecutando un proceso de conteo. Y cuando dicho proceso termina
+//redirije al usuario a la página del juego
 window.onload = function(){
     var percent = document.querySelector('.percent');
     var progress = document.querySelector('.progress');
